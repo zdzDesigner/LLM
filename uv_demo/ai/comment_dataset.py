@@ -29,7 +29,10 @@ class CommentDataset:
         text = self.dataset[index]["review_text"]
         label = self.dataset[index]["sentiment_label"]
         rating = self.dataset[index]["rating"]
-        return text, label, rating
+        rating = 1 if rating>3 else 0
+        
+        return text, rating
+        # return text, label, rating
         
         
 
