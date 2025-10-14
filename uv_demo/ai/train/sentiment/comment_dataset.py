@@ -6,8 +6,9 @@ print(Dataset)
 
 
 class CommentDataset:
-    dataset_path="/home/zdz/Documents/Try/LLM/course/uv_demo/ai/datasets/herbal"
-    dataset=None
+    dataset_path = "/home/zdz/Documents/Try/LLM/course/uv_demo/ai/datasets/herbal"
+    dataset = None
+
     # 初始化数据
     def __init__(self, split=None):
         self.dataset = load_from_disk(self.dataset_path)
@@ -15,28 +16,25 @@ class CommentDataset:
         # print(dataset['category'])
         # if split == "id":
         #     self.dataset = dataset['id']
-        # elif split == "category": 
+        # elif split == "category":
         #     self.dataset = dataset['category']
-        # elif split == "task": 
+        # elif split == "task":
         #     self.dataset = dataset['task']
-
 
     # 获取数据长度
     def __len__(self):
-        return len(self.dataset)
+        # return len(self.dataset)
+        return 3000
+
     # 处理数据
     def __getitem__(self, index):
         text = self.dataset[index]["review_text"]
         label = self.dataset[index]["sentiment_label"]
         rating = self.dataset[index]["rating"]
-        rating = 1 if rating>3 else 0
-        
+        rating = 1 if rating > 4 else 0
+
         return text, rating
         # return text, label, rating
-        
-        
-
-
 
 
 if __name__ == "__main__":
@@ -44,4 +42,3 @@ if __name__ == "__main__":
     print(dataset)
     for data in dataset:
         print(data)
-
