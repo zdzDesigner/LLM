@@ -17,7 +17,7 @@ token = BertTokenizer.from_pretrained("bert-base-chinese")
 # 处理数据编码
 def collate_fn(data):
     sentes = [i[0] for i in data]
-    label = [i[1] for i in data]
+    label_raws = [i[1] for i in data]
     # 编码
     data = token.batch_encode_plus(
         batch_text_or_text_pairs=sentes,
@@ -30,7 +30,7 @@ def collate_fn(data):
     input_ids = data["input_ids"]
     attention_mask = data["attention_mask"]
     token_type_ids = data["token_type_ids"]
-    labels = torch.LongTensor(label)
+    labels = torch.LongTensor(label_raws)
     return input_ids, attention_mask, token_type_ids, labels
 
 
