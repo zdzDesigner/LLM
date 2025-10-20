@@ -39,7 +39,7 @@ train_dataset = CommentDataset()
 # 创建数据加载器
 train_loader = DataLoader(
     dataset=train_dataset,
-    batch_size=32,  # 每次传递8条数据，到collate_fn中编码
+    batch_size=512,  # 每次传递8条数据，到collate_fn中编码
     shuffle=True,
     drop_last=True,
     collate_fn=collate_fn,

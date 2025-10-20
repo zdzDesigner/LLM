@@ -24,7 +24,7 @@ class CommentDataset:
     # 获取数据长度
     def __len__(self):
         # return len(self.dataset)
-        return 3000
+        return 60000
 
     # 处理数据
     def __getitem__(self, index):
