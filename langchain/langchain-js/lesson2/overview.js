@@ -5,7 +5,9 @@ import { tool } from "@langchain/core/tools"
 import { ChatOpenAI } from "@langchain/openai"
 
 const model = new ChatOpenAI({
-  modelName: "Qwen/Qwen2.5-7B-Instruct",
+  // modelName: "Qwen/Qwen2.5-7B-Instruct",
+  // modelName: "netease-youdao/bce-embedding-base_v1",
+  modelName: "THUDM/GLM-Z1-9B-0414",
   temperature: 0.7,
   configuration: {
     baseURL: "https://api.siliconflow.cn/v1",
