@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@langchain/classic": "^1.0.4",
+    "@langchain/community": "^1.1.0",
     "@langchain/core": "^1.0.5",
     "@langchain/openai": "^1.1.2",
     "dotenv": "^16.3.1",

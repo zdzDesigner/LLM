@@ -7,6 +7,23 @@
   resolved "https://registry.npmmirror.com/@cfworker/json-schema/-/json-schema-4.1.1.tgz#4a2a3947ee9fa7b7c24be981422831b8674c3be6"
   integrity sha512-gAmrUZSGtKc3AiBL71iNWxDsyUC5uMaKKGdvzYsBoTW/xi42JQHl7eKV2OYzCUqvc+D2RCcf7EXY2iCyFIk6og==
 
+"@langchain/classic@1.0.6":
+  version "1.0.6"
+  resolved "https://registry.npmmirror.com/@langchain/classic/-/classic-1.0.6.tgz#ea2c2051f2f8b6b10684c1b02ab7af72e0cd00e4"
+  integrity sha512-6wOMst7DohlvRUj1bLUVn70bPs9h9bYZXTHeIkNdPLVV+bl+lHlhekPEVsFUVY7HiHeGIOlWdMmC3qZew6K1hw==
+  dependencies:
+    "@langchain/openai" "1.2.0"
+    "@langchain/textsplitters" "1.0.1"
+    handlebars "^4.7.8"
+    js-yaml "^4.1.1"
+    jsonpointer "^5.0.1"
+    openapi-types "^12.1.3"
+    uuid "^10.0.0"
+    yaml "^2.2.1"
+    zod "^3.25.76 || ^4"
+  optionalDependencies:
+    langsmith "^0.3.64"
+
 "@langchain/classic@^1.0.4":
   version "1.0.4"
   resolved "https://registry.npmmirror.com/@langchain/classic/-/classic-1.0.4.tgz#2bb72482774b1ed2d9666045fecfb7743f1e438d"
@@ -24,6 +41,20 @@
     zod "^3.25.76 || ^4"
   optionalDependencies:
     langsmith "^0.3.64"
+
+"@langchain/community@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/@langchain/community/-/community-1.1.0.tgz#f235266a3d0485af92a808205454ff8368ba5dbb"
+  integrity sha512-jFSdRJbETOAMe6Hqw7sJDNUw5yUpeA0mEeiJ8Q7YvEBz9RjFwbNqCLw+a1em7IaR7hiV+4HAzidQFLFFjnQ6eQ==
+  dependencies:
+    "@langchain/classic" "1.0.6"
+    "@langchain/openai" "1.2.0"
+    binary-extensions "^2.2.0"
+    flat "^5.0.2"
+    js-yaml "^4.1.1"
+    math-expression-evaluator "^2.0.0"
+    uuid "^10.0.0"
+    zod "^3.25.76 || ^4"
 
 "@langchain/core@^1.0.5":
   version "1.0.6"
@@ -76,10 +107,26 @@
     openai "^6.9.0"
     zod "^3.25.76 || ^4"
 
+"@langchain/openai@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.npmmirror.com/@langchain/openai/-/openai-1.2.0.tgz#18ea4258192d81010492fb89d7816b877a77b3ef"
+  integrity sha512-r2g5Be3Sygw7VTJ89WVM/M94RzYToNTwXf8me1v+kgKxzdHbd/8XPYDFxpXEp3REyPgUrtJs+Oplba9pkTH5ug==
+  dependencies:
+    js-tiktoken "^1.0.12"
+    openai "^6.10.0"
+    zod "^3.25.76 || ^4"
+
 "@langchain/textsplitters@1.0.0":
   version "1.0.0"
   resolved "https://registry.npmmirror.com/@langchain/textsplitters/-/textsplitters-1.0.0.tgz#1fe78562b9bf74b0a88f13d443cb3c79f4d28331"
   integrity sha512-L1gOwOJXeM+6MKzrj9shSsDyH32j898jgqvVArOjdge2zLyY+Mv4aOuyAAxbPyaFdQXlxKfa9xjqIUyv8TzrqA==
+  dependencies:
+    js-tiktoken "^1.0.12"
+
+"@langchain/textsplitters@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/@langchain/textsplitters/-/textsplitters-1.0.1.tgz#292f9c93239178c248b3338acf7b68aa47aa9830"
+  integrity sha512-rheJlB01iVtrOUzttscutRgLybPH9qR79EyzBEbf1u97ljWyuxQfCwIWK+SjoQTM9O8M7GGLLRBSYE26Jmcoww==
   dependencies:
     js-tiktoken "^1.0.12"
 
@@ -128,7 +175,7 @@ base64-js@^1.5.1:
   resolved "https://registry.npmmirror.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
   integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
 
-binary-extensions@^2.0.0:
+binary-extensions@^2.0.0, binary-extensions@^2.2.0:
   version "2.3.0"
   resolved "https://registry.npmmirror.com/binary-extensions/-/binary-extensions-2.3.0.tgz#f6e14a97858d327252200242d4ccfe522c445522"
   integrity sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==
@@ -228,6 +275,11 @@ fill-range@^7.1.1:
   integrity sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==
   dependencies:
     to-regex-range "^5.0.1"
+
+flat@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.npmmirror.com/flat/-/flat-5.0.2.tgz#8ca6fe332069ffa9d324c327198c598259ceb241"
+  integrity sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==
 
 fsevents@~2.3.2:
   version "2.3.3"
@@ -348,6 +400,11 @@ langsmith@~0.3.74:
     semver "^7.6.3"
     uuid "^10.0.0"
 
+math-expression-evaluator@^2.0.0:
+  version "2.0.7"
+  resolved "https://registry.npmmirror.com/math-expression-evaluator/-/math-expression-evaluator-2.0.7.tgz#dc99a80ce2bf7f9b7df878126feb5c506c1fdf5f"
+  integrity sha512-uwliJZ6BPHRq4eiqNWxZBDzKUiS5RIynFFcgchqhBOloVLVBpZpNG8jRYkedLcBvhph8TnRyWEuxPqiQcwIdog==
+
 minimatch@^3.1.2:
   version "3.1.2"
   resolved "https://registry.npmmirror.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
@@ -395,6 +452,11 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.npmmirror.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+
+openai@^6.10.0:
+  version "6.14.0"
+  resolved "https://registry.npmmirror.com/openai/-/openai-6.14.0.tgz#459637e6e09bc14af1392a8dd38b1a64c2cc372a"
+  integrity sha512-ZPD9MG5/sPpyGZ0idRoDK0P5MWEMuXe0Max/S55vuvoxqyEVkN94m9jSpE3YgNgz3WoESFvozs57dxWqAco31w==
 
 openai@^6.9.0:
   version "6.9.1"
